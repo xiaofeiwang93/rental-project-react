@@ -1,8 +1,18 @@
-import styles from './itemList.css';
+import styles from './Rental.css';
 import { Row, Col, Table, Divider, Tag, Button, Icon } from 'antd';
 import React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  useRouteMatch
+} from "react-router-dom";
 
 export default function() {
+    let { path, url } = useRouteMatch();
+
     const columns = [
         {
           title: 'Name',
