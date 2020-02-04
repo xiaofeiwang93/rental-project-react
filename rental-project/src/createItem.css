@@ -1,0 +1,13 @@
+.create-new-page {
+    background: url(https://cdn.pixabay.com/photo/2019/07/09/07/01/background-4326353_960_720.jpg);
+    border: 0;
+    position: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    padding-top:10%;
+  }
+
+.gutter-box {
+    padding: 5px 0;
+}
