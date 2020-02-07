@@ -1,6 +1,7 @@
 import React from "react";
 import Rental from "./Rental"
 import CreateItem from './createItem'
+import Login from './login'
 import NotFound from './notfound'
 import {
   BrowserRouter as Router,
@@ -27,6 +28,9 @@ export default function AppRouter() {
           <li>
             <Link to="/createItem">Add a Rental Item</Link>
           </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
         </ul>
 
         <hr />
@@ -50,6 +54,9 @@ export default function AppRouter() {
           </Route>
           <Route path="/createItem">
             <CreateItem />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
           <Route component={NotFound} />
         </Switch>
