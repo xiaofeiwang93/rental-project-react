@@ -1,14 +1,16 @@
 import React from "react";
 import Rental from "./Rental"
 import CreateItem from './createItem'
+import NotFound from './notfound'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 
-export default function BasicExample() {
+export default function AppRouter() {
   return (
     <Router>
       <div>
@@ -49,6 +51,7 @@ export default function BasicExample() {
           <Route path="/createItem">
             <CreateItem />
           </Route>
+          <Route component={NotFound} />
         </Switch>
       </div>
     </Router>
