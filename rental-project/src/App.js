@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import Rental from "./Rental"
 import CreateItem from './createItem'
 import Login from './login'
@@ -10,6 +10,25 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+
+//use RouteGard to authorise and controll access
+class RouteGuard extends Component{
+  state={
+    isLoggedIn: false
+  }
+
+  render(){
+    const {component:Component,...otherProps}=this.props
+        return (
+           <Route {...otherProps} render={props=>(
+            this.state.isLoggedIn?<Component {...props}></Component>:
+               (<Redirect to={
+                   {pathname:'/login',state:{from:props.location.pathname}}
+               }></Redirect>)
+           )}></Route> 
+        )
+  }
+}
 
 export default function AppRouter() {
   return (
@@ -43,21 +62,11 @@ export default function AppRouter() {
           of them to render at a time
         */}
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/rental">
-            <Rental />
-          </Route>
-          <Route path="/createItem">
-            <CreateItem />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
+          <Route exact path="/" component={Home}></Route>
+          <Route path="/about" component={About}></Route>
+          <Route path="/rental" component={Rental}></Route>
+          <Route path="/login" component={Login}></Route>
+          <RouteGuard path="/createItem" component={CreateItem}></RouteGuard>
           <Route component={NotFound} />
         </Switch>
       </div>
