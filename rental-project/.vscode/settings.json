@@ -1,4 +1,4 @@
 {
     "appService.deploySubpath": "",
-    "appService.defaultWebAppToDeploy": "/subscriptions/627c9369-c727-4b94-8616-847d976652f6/resourceGroups/react-rental-project/providers/Microsoft.Web/sites/rental-project"
+    "appService.defaultWebAppToDeploy": "/subscriptions/627c9369-c727-4b94-8616-847d976652f6/resourceGroups/rental-project/providers/Microsoft.Web/sites/rental-project"
 }
