@@ -12,7 +12,7 @@ class NormalLoginForm extends React.Component {
       });
     };
   
-    render() {
+    render() {       
       const { getFieldDecorator } = this.props.form;
       return (
           <div>
