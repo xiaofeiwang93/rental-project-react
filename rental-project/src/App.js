@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Rental from "./Rental"
 import CreateItem from './createItem'
 import Login from './login'
+import SendMessage from './sendMessage'
 import NotFound from './notfound'
 import {
   BrowserRouter as Router,
@@ -12,23 +13,23 @@ import {
 } from "react-router-dom";
 
 //use RouteGard to authorise and controll access
-class RouteGuard extends Component{
-  state={
-    isLoggedIn: false
-  }
+// class RouteGuard extends Component{
+//   state={
+//     isLoggedIn: false
+//   }
 
-  render(){
-    const {component:Component,...otherProps}=this.props
-        return (
-           <Route {...otherProps} render={props=>(
-            this.state.isLoggedIn?<Component {...props}></Component>:
-               (<Redirect to={
-                   {pathname:'/login',state:{from:props.location.pathname}}
-               }></Redirect>)
-           )}></Route> 
-        )
-  }
-}
+//   render(){
+//     const {component:Component,...otherProps}=this.props
+//         return (
+//            <Route {...otherProps} render={props=>(
+//             this.state.isLoggedIn?<Component {...props}></Component>:
+//                (<Redirect to={
+//                    {pathname:'/login',state:{from:props.location.pathname}}
+//                }></Redirect>)
+//            )}></Route> 
+//         )
+//   }
+// }
 
 export default function AppRouter() {
   return (
@@ -46,6 +47,9 @@ export default function AppRouter() {
           </li>
           <li>
             <Link to="/createItem">Add a Rental Item</Link>
+          </li>
+          <li>
+            <Link to="/sendMessage">Send a Message</Link>
           </li>
           <li>
             <Link to="/login">Login</Link>
@@ -66,7 +70,8 @@ export default function AppRouter() {
           <Route path="/about" component={About}></Route>
           <Route path="/rental" component={Rental}></Route>
           <Route path="/login" component={Login}></Route>
-          <RouteGuard path="/createItem" component={CreateItem}></RouteGuard>
+          <Route path="/createItem" component={CreateItem}></Route>
+          <Route path="/sendMessage" component={SendMessage}></Route>
           <Route component={NotFound} />
         </Switch>
       </div>

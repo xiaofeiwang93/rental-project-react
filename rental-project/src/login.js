@@ -1,6 +1,13 @@
 import React from 'react'
 import './login.css'
-import { Form, Icon, Input, Button, Checkbox, Row, Col } from 'antd';
+import { Form, Icon, Input, Button, Checkbox, Row} from 'antd';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 
 class NormalLoginForm extends React.Component {
     handleSubmit = e => {
