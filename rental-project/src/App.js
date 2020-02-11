@@ -12,6 +12,7 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+import { Row, Col, Button } from 'antd';
 
 //use RouteGard to authorise and controll access
 // class RouteGuard extends Component{
@@ -36,31 +37,38 @@ export default function AppRouter() {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/rental">Rental</Link>
-          </li>
-          <li>
-            <Link to="/createItem">Add a Rental Item</Link>
-          </li>
-          <li>
-            <Link to="/editItem">Edit Item</Link>
-          </li>
-          <li>
-            <Link to="/sendMessage">Send a Message</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
-
-        <hr />
+        <Row>
+          <Col span={8}>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/rental">Rental</Link>
+              </li>
+              <li>
+                <Link to="/createItem">Add a Rental Item</Link>
+              </li>
+              <li>
+                <Link to="/editItem">Edit Item</Link>
+              </li>
+              <li>
+                <Link to="/sendMessage">Send a Message</Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            </ul>
+          </Col>
+          <Col span={8} offset={8}>
+            <li>
+              <Link to="/">Logout</Link>
+            </li>
+          </Col>
+        </Row>
 
         {/*
           A <Switch> looks through all its children <Route>
