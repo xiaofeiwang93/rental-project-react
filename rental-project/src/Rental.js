@@ -18,17 +18,20 @@ export default function() {
           title: 'Name',
           dataIndex: 'name',
           key: 'name',
+          align: 'center',
           render: text => <a>{text}</a>,
         },
         {
           title: 'Price',
           dataIndex: 'price',
           key: 'price',
+          align: 'center',
         },
         {
           title: 'Photo',
           dataIndex: 'photo',
           key: 'photo',
+          align: 'center',
           render:(record) => {
                 return <img src={record} alt="" style={{width:'50px',height:'50px',borderRadius:'50%'}}/>
             }
@@ -37,18 +40,41 @@ export default function() {
           title: 'Description',
           key: 'description',
           dataIndex: 'description',
+          align: 'center',
         },
         {
             title: 'Expiry',
             key: 'expiry',
             dataIndex: 'expiry',
+            align: 'center',
         },
         {
           title: 'Action',
           key: 'action',
+          align: 'center',
           render: (text, record) => (
             <span>
               <Button type="primary">SEND A MESSAGE</Button>
+            </span>
+          ),
+        },
+        {
+          title: 'Edit',
+          key: 'edit',
+          align: 'center',
+          render: (text, record) => (
+            <span>
+              <Button type="primary">Edit</Button>
+            </span>
+          ),
+        },
+        {
+          title: 'Delete',
+          key: 'delete',
+          align: 'center',
+          render: (text, record) => (
+            <span>
+              <Button type="primary">Delete</Button>
             </span>
           ),
         },
