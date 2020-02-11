@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Rental from "./Rental"
 import CreateItem from './createItem'
+import EditItem from './editItem'
 import Login from './login'
 import SendMessage from './sendMessage'
 import NotFound from './notfound'
@@ -49,6 +50,9 @@ export default function AppRouter() {
             <Link to="/createItem">Add a Rental Item</Link>
           </li>
           <li>
+            <Link to="/editItem">Edit Item</Link>
+          </li>
+          <li>
             <Link to="/sendMessage">Send a Message</Link>
           </li>
           <li>
@@ -71,6 +75,7 @@ export default function AppRouter() {
           <Route path="/rental" component={Rental}></Route>
           <Route path="/login" component={Login}></Route>
           <Route path="/createItem" component={CreateItem}></Route>
+          <Route path="/editItem" component={EditItem}></Route>
           <Route path="/sendMessage" component={SendMessage}></Route>
           <Route component={NotFound} />
         </Switch>
