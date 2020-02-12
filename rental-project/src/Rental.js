@@ -62,7 +62,7 @@ export default function() {
           align: 'center',
           render: (text, record) => (
             <span>
-              <Button onClick={event =>  window.location.href='/sendMessage'} type="primary">SEND A MESSAGE</Button>
+              <Button onClick={event =>  document.location.href='/sendMessage'} type="primary">SEND A MESSAGE</Button>
             </span>
           ),
         },
@@ -73,7 +73,7 @@ export default function() {
           render: (text, record) => (
             <span>
               {/* <Link to="/editItem" className="btn btn-primary">Edit</Link> */}
-              <Button onClick={event =>  window.location.href='/editItem'} type="primary">Edit</Button>
+              <Button onClick={event =>  document.location.href='/editItem'} type="primary">Edit</Button>
             </span>
           ),
         },
