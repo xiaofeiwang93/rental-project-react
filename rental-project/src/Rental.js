@@ -1,5 +1,5 @@
 import styles from './Rental.css';
-import { Row, Col, Table, Divider, Tag, Button, Icon } from 'antd';
+import { Row, Col, Table, Divider, Tag, Button, Popconfirm, Icon } from 'antd';
 import React from 'react'
 import EditItem from './editItem'
 import {
@@ -62,7 +62,7 @@ export default function() {
           align: 'center',
           render: (text, record) => (
             <span>
-              <Button type="primary">SEND A MESSAGE</Button>
+              <Button onClick={event =>  window.location.href='/sendMessage'} type="primary">SEND A MESSAGE</Button>
             </span>
           ),
         },
@@ -83,7 +83,12 @@ export default function() {
           align: 'center',
           render: (text, record) => (
             <span>
-              <Button type="primary">Delete</Button>
+              <Popconfirm
+                title="Are you sure？"
+                icon={<Icon type="question-circle-o" style={{ color: 'red' }} />}
+              >
+                <Button type="primary">Delete</Button>
+              </Popconfirm>
             </span>
           ),
         },
