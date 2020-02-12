@@ -1,14 +1,22 @@
 import styles from './Rental.css';
 import { Row, Col, Table, Divider, Tag, Button, Icon } from 'antd';
 import React from 'react'
+import EditItem from './editItem'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
   useParams,
-  useRouteMatch
+  useRouteMatch,
+  Redirect
 } from "react-router-dom";
+
+// function editItem(e) {
+//   e.preventDefault();
+//   console.log('The link was clicked.');
+//   <Redirect to={EditItem}/>
+// }
 
 export default function() {
     let { path, url } = useRouteMatch();
@@ -64,7 +72,8 @@ export default function() {
           align: 'center',
           render: (text, record) => (
             <span>
-              <Button type="primary">Edit</Button>
+              {/* <Link to="/editItem" className="btn btn-primary">Edit</Link> */}
+              <Button onClick={event =>  window.location.href='/editItem'} type="primary">Edit</Button>
             </span>
           ),
         },
